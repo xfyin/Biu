@@ -1,0 +1,39 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dynamic_title"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:background="?attr/colorPrimary"
+    android:orientation="horizontal"
+    app:titleTextColor="@color/antiquewhite">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/dynamic_title_name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="你好，世界"/>
+
+        <TextView
+            android:id="@+id/dynamic_title_action"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/take_phone"
+            android:gravity="center"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.25dp"
+        android:background="@color/antiquewhite"/>
+
+</LinearLayout>
+
+
