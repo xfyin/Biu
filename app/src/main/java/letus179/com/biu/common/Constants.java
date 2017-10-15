@@ -8,5 +8,6 @@ package letus179.com.biu.common;
 
 public class Constants {
 
-
+    // 动态-提醒谁看
+    public static final int DYNAMIC_REMIND = 0;
 }

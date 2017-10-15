@@ -2,7 +2,7 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android" >
     <!-- 点击 -->
     <item android:state_checked="true">
-        <layer-list >
+        <layer-contactsList >
             <item >
                 <shape android:shape="rectangle">
                     <stroke android:width="5dp" android:color="@color/tab_light_color"/>
@@ -13,7 +13,7 @@
                     <solid android:color="#fff"/>
                 </shape>
             </item>
-        </layer-list>
+        </layer-contactsList>
     </item>
 	<!-- 默认 -->
 	<item >

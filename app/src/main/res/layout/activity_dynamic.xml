@@ -12,6 +12,7 @@
         android:layout_height="150dp">
 
         <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/dynamic_content_text"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="5dp"
@@ -52,32 +53,58 @@
     </LinearLayout>
 
 
-    <LinearLayout
-        android:id="@+id/dynamic_remind"
+    <RelativeLayout
+
         android:layout_width="match_parent"
         android:layout_height="45dp">
 
         <ImageView
+            android:id="@+id/dynamic_remind_img"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
             android:layout_marginLeft="10dp"
             android:src="@drawable/take_phone"/>
 
         <TextView
+            android:id="@+id/dynamic_remind_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:layout_gravity="center"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="5dp"
-            android:text="\@提醒谁"/>
+            android:layout_toRightOf="@id/dynamic_remind_img"
+            android:text="\@提醒谁"
+            android:textSize="12sp"/>
 
-        <ListView
+
+        <letus179.com.biu.view.HorizontalListView
             android:id="@+id/dynamic_remind_person"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"></ListView>
-    </LinearLayout>
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@id/dynamic_remind_text"/>
+
+        <ImageView
+            android:id="@+id/dynamic_remind_person_arrow"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_marginLeft="-25dp"
+            android:layout_toRightOf="@id/dynamic_remind_person"
+            android:src="@drawable/right_arrow"/>
+
+        <View
+            android:id="@+id/dynamic_remind"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/selector_item_background"/>
+
+    </RelativeLayout>
 
     <View
         android:layout_width="match_parent"
@@ -104,7 +131,8 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="5dp"
             android:layout_weight="1"
-            android:text="所在位置"/>
+            android:text="所在位置"
+            android:textSize="12sp"/>
 
         <ImageView
             android:layout_width="20dp"

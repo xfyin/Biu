@@ -1,0 +1,36 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center"
+             android:clickable="true"
+             android:orientation="vertical"
+             android:padding="2dp">
+
+    <TextView
+        android:id="@+id/dynamic_horizontal_list_item_delete"
+        android:layout_width="18dp"
+        android:layout_height="14dp"
+        android:background="@mipmap/delete_contact"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="3dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingLeft="2dp">
+
+        <ImageView
+            android:id="@+id/dynamic_horizontal_list_item_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/take_phone"/>
+
+        <TextView
+            android:id="@+id/dynamic_horizontal_list_item_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"/>
+    </LinearLayout>
+
+</FrameLayout>

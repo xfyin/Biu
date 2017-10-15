@@ -11,8 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import letus179.com.biu.DynamicActivity;
+import letus179.com.biu.dynamic.DynamicActivity;
 import letus179.com.biu.R;
 
 public class DynamicFragment extends Fragment implements View.OnClickListener {
@@ -36,6 +37,7 @@ public class DynamicFragment extends Fragment implements View.OnClickListener {
                 Intent intent = new Intent(view.getContext(), DynamicActivity.class);
                 intent.putExtra("no_pic", true);
                 startActivity(intent);
+                getActivity(). overridePendingTransition(R.anim.right_slide_in, R.anim.left_slide_out);
                 return false;
             }
         });
@@ -59,6 +61,12 @@ public class DynamicFragment extends Fragment implements View.OnClickListener {
 
     private void initViewAndClick() {
 
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Toast.makeText(getActivity(), "requestCode:" + requestCode, Toast.LENGTH_SHORT).show();
     }
 
     /**
