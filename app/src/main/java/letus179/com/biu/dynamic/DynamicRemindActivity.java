@@ -23,7 +23,7 @@ import java.util.Comparator;
 import java.util.List;
 
 import letus179.com.biu.R;
-import letus179.com.biu.adapter.ContactsAdapter;
+import letus179.com.biu.adapter.DynamicContactsAdapter;
 import letus179.com.biu.bean.Contacts;
 import letus179.com.biu.common.BasicActivity;
 import letus179.com.biu.common.MyApplication;
@@ -113,7 +113,7 @@ public class DynamicRemindActivity extends BasicActivity implements OnClickListe
             }
         }
 
-        final ContactsAdapter adapter = new ContactsAdapter(this, contactsList);
+        final DynamicContactsAdapter adapter = new DynamicContactsAdapter(this, contactsList);
         dynamic_contacts_list.setAdapter(adapter);
         dynamic_contacts_list.setOnScrollListener(this);
         dynamic_contacts_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {

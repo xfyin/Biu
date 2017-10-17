@@ -1,0 +1,116 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:orientation="vertical">
+
+    <include layout="@layout/dynamic_location_title"/>
+
+    <RelativeLayout
+        android:id="@+id/plugin_camera_image_folder_headview"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:layout_marginBottom="3dp"
+        android:background="#2B4058"
+        android:gravity="center_vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/chat_publish_complete_cancle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="取消"
+            android:textColor="#ffffff"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/chat_publish_complete_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="选择当前位置"
+            android:textColor="#ffffff"
+            android:textSize="20sp"/>
+
+        <Button
+            android:id="@+id/dynamic_location_publish"
+            android:layout_width="55dp"
+            android:layout_height="27dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/chat_publish_bg"
+            android:text="完成"
+            android:textColor="#fff"
+            android:textSize="16sp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="2"
+        android:visibility="gone">
+
+        <com.baidu.mapapi.map.MapView
+            android:id="@+id/dynamic_location_map_view"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:clickable="true"/>
+
+        <Button
+            android:id="@+id/dynamic_location_request"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="40dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/custom_loc"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/dynamic_location_no_show"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="10dp"
+                android:text="不显示位置"
+                android:textColor="#333333"
+                android:textSize="16sp"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_marginRight="20dp"
+            android:id="@+id/dynamic_location_no_show_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/complete_type_conform"/>
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/dynamic_location_nearby"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3"/>
+
+</LinearLayout>

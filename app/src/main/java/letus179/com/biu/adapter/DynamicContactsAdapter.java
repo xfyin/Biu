@@ -21,11 +21,11 @@ import letus179.com.biu.bean.Contacts;
  * 联系人列表 适配器
  */
 
-public class ContactsAdapter extends BaseAdapter {
+public class DynamicContactsAdapter extends BaseAdapter {
     private List<Contacts> contactsList;
     private LayoutInflater inflater;
 
-    public ContactsAdapter(Context context, List<Contacts> contactsList) {
+    public DynamicContactsAdapter(Context context, List<Contacts> contactsList) {
         inflater = LayoutInflater.from(context);
         this.contactsList = contactsList;
     }

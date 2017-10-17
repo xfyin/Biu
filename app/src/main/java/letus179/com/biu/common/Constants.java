@@ -10,4 +10,7 @@ public class Constants {
 
     // 动态-提醒谁看
     public static final int DYNAMIC_REMIND = 0;
+
+    // 动态-所在位置
+    public static final int DYNAMIC_LOCATION = 1;
 }

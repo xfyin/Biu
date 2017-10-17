@@ -32,11 +32,11 @@ public class DynamicActivity extends BasicActivity implements View.OnClickListen
 
     private static final String TAG = "DynamicActivity";
 
-    // 取消，发布
-    private TextView dynamic_action_cancel, dynamic_action_save;
+    // 取消，发布  位置信息
+    private TextView dynamic_action_cancel, dynamic_action_save, dynamic_position_text;
 
     // 展示图片,@提醒谁看
-    private LinearLayout dynamic_pictures_about;
+    private LinearLayout dynamic_pictures_about, dynamic_position;
 
     private View dynamic_remind;
 
@@ -100,10 +100,16 @@ public class DynamicActivity extends BasicActivity implements View.OnClickListen
             case R.id.dynamic_remind:
                 intent = new Intent(DynamicActivity.this, DynamicRemindActivity.class);
                 intent.putExtra("title", "提醒谁看");
-                if (checkedContactList != null && checkedContactList.size() >0) {
+                if (checkedContactList != null && checkedContactList.size() > 0) {
                     String json = new Gson().toJson(checkedContactList);
                     intent.putExtra("checked_contacts", json);
                 }
+                this.startActivityForResult(intent, Constants.DYNAMIC_REMIND);
+                break;
+            case R.id.dynamic_position:
+                intent = new Intent(DynamicActivity.this, DynamicLocationActivity.class);
+                intent.putExtra("title", "所在位置");
+                startActivityForResult(intent, Constants.DYNAMIC_LOCATION);
                 this.startActivityForResult(intent, Constants.DYNAMIC_REMIND);
                 break;
             default:
@@ -122,6 +128,10 @@ public class DynamicActivity extends BasicActivity implements View.OnClickListen
                     }.getType());
                     initHorizontalView();
                     hListViewAdapter.notifyDataSetChanged();
+                    break;
+                case Constants.DYNAMIC_LOCATION:
+                    String location = data.getStringExtra("checked_location");
+                    dynamic_position_text.setText(location);
                     break;
                 default:
                     break;
@@ -147,11 +157,13 @@ public class DynamicActivity extends BasicActivity implements View.OnClickListen
         dynamic_pictures_about = (LinearLayout) findViewById(R.id.dynamic_pictures_about);
         dynamic_remind = findViewById(R.id.dynamic_remind);
         dynamic_content_text = (MaterialEditText) findViewById(R.id.dynamic_content_text);
+        dynamic_position = (LinearLayout) findViewById(R.id.dynamic_position);
+        dynamic_position_text = (TextView) findViewById(R.id.dynamic_position_text);
 
         dynamic_action_cancel.setOnClickListener(this);
         dynamic_action_save.setOnClickListener(this);
         dynamic_remind.setOnClickListener(this);
-
+        dynamic_position.setOnClickListener(this);
 
     }
 
