@@ -46,6 +46,7 @@ import java.util.List;
 
 import letus179.com.biu.R;
 import letus179.com.biu.adapter.DynamicLocationAdapter;
+import letus179.com.biu.utils.LogUtils;
 import letus179.com.biu.utils.ToastUtils;
 
 public class DynamicLocationActivity extends Activity implements OnGetPoiSearchResultListener {
@@ -235,6 +236,7 @@ public class DynamicLocationActivity extends Activity implements OnGetPoiSearchR
             }
 
             locType = location.getLocType();
+            LogUtils.d("locType", locType+"");
             longitude = location.getLongitude();
             latitude = location.getLatitude();
             addrStr = location.getAddrStr();// 获取反地理编码(文字描述的地址)
